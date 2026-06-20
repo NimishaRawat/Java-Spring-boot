@@ -14,18 +14,14 @@ public class Main {
         String url = "jdbc:postgresql://localhost:5432/users";
         String uname = "postgres";
         String pass = "0000";
-        String sql = "select * from customer;";
+        String sql = "insert into customer values (7,'Ankit',25);";
 
         // Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(url,uname,pass);
         System.out.println("Connection Established");
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(sql);
-        while(rs.next()){
-            System.out.print("Id - " + rs.getInt("id") + "    ");
-            System.out.print("Name - " + rs.getString("name") + "    ");
-            System.out.println("Age - "+ rs.getInt("age"));
-        }
+        Boolean status = st.execute(sql);
+        System.out.println(status);
         con.close();
         System.out.println("Connection Closed");
     }
