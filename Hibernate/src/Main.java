@@ -14,7 +14,7 @@ public class Main {
         String url = "jdbc:postgresql://localhost:5432/users";
         String uname = "postgres";
         String pass = "0000";
-        String sql = "insert into customer values (7,'Ankit',25);";
+        String sql = "update customer set name = 'Nirved' where id = '7';";
 
         // Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(url,uname,pass);
