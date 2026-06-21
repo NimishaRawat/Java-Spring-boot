@@ -21,7 +21,6 @@ public class Main {
 
         Transaction transaction = session.beginTransaction();
         session.merge(c1);
-
         transaction.commit();
         System.out.println(c1);
         session.close();
